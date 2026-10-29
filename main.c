@@ -5,18 +5,21 @@
 int main(void)
 {
     int i;
+    int grade[SIZE];
     int score[SIZE];
-    int sum=0;
-
-    printf("input the score for 5 people\n");
 
     for(i=0;i<SIZE;i++)
     {
-        scanf("%d",&score[i]);
-        sum+=score[i];
+        grade[i]=rand()%100;
+        printf("grade[%d]:%d\n",i,grade[i]);
     }
+    
+    //배열값 복사
+    for(i=0;i<SIZE;i++)
+    score[i]=grade[i];
 
-    printf("average of score:%d\n",sum/SIZE);
+    for(i=0;i<SIZE;i++)
+    printf("score[%d]=%d\n",i,score[i]);
 
     return 0;
 }
